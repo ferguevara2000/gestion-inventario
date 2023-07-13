@@ -1,3 +1,7 @@
+# Inventory Management Application
+
+The Inventory Management Application is a comprehensive solution for efficiently managing inventory in a company. It provides dedicated sections for employees, products, sales, customers, and reports, offering a streamlined workflow and valuable insights for effective inventory management.
+
 # App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.

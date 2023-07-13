@@ -1,0 +1,42 @@
+:root{
+    --dark: #16191c;
+    --dark-x: #1e2126;
+}
+
+body{
+    border-radius: 20px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.password-icon {
+    float: right;
+    position: relative;
+    margin: -30px 10px 0 0;
+    cursor: pointer;
+}
+
+.form-control-feedback {
+    position: absolute;
+    padding: 5px;
+    pointer-events: none;
+  }
+
+.imagen{
+    border-radius: 20px;
+}
+
+.bg-dark{
+    background-color: #16191c !important;
+}
+
+.bg-dark-x{
+    background-color: #1e2126;
+}
+
+.form-control, .btn{
+    padding-left: 30px!important;
+    min-width: 3.125rem;
+    line-height: initial;
+    color: #ffffff;
+}

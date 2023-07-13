@@ -1,0 +1,42 @@
+<body class="bg-dark card">
+  <section>
+    <div class="row g-o">
+      <div class="col-lg-5">
+        <img class="img-fluid imagen" src="/assets/img/fondo.jpg" alt="fondo">
+      </div>
+      <div class="col-lg-7 d-flex flex-column justify-content-center">
+        <div>
+          <h2 class="px-lg-5 pt-lg-4 pb-lg-3 p-4">
+            Sistema de Gestion de Inventario
+          </h2>
+        </div>
+
+        <div class="px-lg-5 py-lg-4">
+          <h4 class="font-weight-bold mb-4">Bienvenido al Sistema</h4>
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label font-weight-bold">Email</label>
+             <div class="form-group has-feedback">
+              <i class="bi bi-envelope-fill form-control-feedback"></i>
+              <input type="email" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="Ingrese el email" aria-describedby="emailHelp">
+             </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label font-weight-bold">Contraseña</label>
+              <div class="form-group has-feedback">
+                <i class="bi bi-lock-fill form-control-feedback"></i>
+                <input type="{{hidePassword?'password':'text'}}" class="form-control bg-dark-x border-0" placeholder="Ingrese la contraseña" id="exampleInputPassword1">
+                <span class="bi {{hidePassword?'bi-eye-slash-fill':'bi-eye-fill'}} password-icon" (click)="hidePassword=!hidePassword"></span>
+              </div>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+            </div>
+            <a href="http://localhost:4200/cooperatives" class="btn btn-primary w-100">Ingresar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

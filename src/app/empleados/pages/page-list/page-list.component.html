@@ -1,0 +1,63 @@
+<app-tittle></app-tittle>
+<app-container>
+  <div>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary mb-3"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Nuevo Empleado
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ingresar Nuevo Empleado</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+              <form [formGroup]="empleadosForm" (ngSubmit)="onSubmit()">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre" [(ngModel)]="nombre" required>
+                <label class="form-label">Apellido</label>
+                <input type="text" class="form-control" formControlName="apellido" [(ngModel)]="apellido" required>
+                <label class="form-label">Cargo</label>
+                <input type="text" class="form-control" formControlName="cargo" [(ngModel)]="cargo" required>
+                <label class="form-label">Telefono</label>
+                <input type="number" class="form-control" formControlName="telefono" [(ngModel)]="telefono">
+                <label class="form-label">Salario</label>
+                <input type="number" class="form-control" formControlName="salario" [(ngModel)]="salario">
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()" data-bs-dismiss="modal">Guardar Cliente</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table [data]="dataClients" [columns]="columns" (onDelete)="deleteCliente($event)"></app-table>
+</app-container>
+<app-keypad-buttom [data]="dataClients" [titulo]="titulo"></app-keypad-buttom>

@@ -1,0 +1,73 @@
+<app-tittle></app-tittle>
+<app-container>
+  <div>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary mb-3"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Nuevo Cliente
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ingresar Nuevo Cliente</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+              <form [formGroup]="clientesForm" (ngSubmit)="onSubmit()">
+                <label class="form-label">Cooperativa</label>
+                <input type="text" class="form-control" formControlName="nombre" [(ngModel)]="nombre" required>
+                <label class="form-label">Numero</label>
+                <input type="text" class="form-control" formControlName="apellido" [(ngModel)]="apellido" required>
+                <label class="form-label">Año</label>
+                <input type="date" class="form-control" formControlName="fechaNacimiento" [(ngModel)]="fechaNacimiento" required>
+                <label class="form-label">RamvCpn</label>
+                <input type="number" class="form-control" formControlName="telefono" [(ngModel)]="telefono">
+                <label class="form-label">Modelo</label>
+                <input type="text" class="form-control" formControlName="correo" [(ngModel)]="correo">
+                <label class="form-label">Marca Chasis</label>
+                <input type="text" class="form-control" formControlName="correo" [(ngModel)]="correo">
+                <label class="form-label">Transporte</label>
+                <input type="text" class="form-control" formControlName="correo" [(ngModel)]="correo">
+                <label class="form-label">Capacidad</label>
+                <input type="text" class="form-control" formControlName="correo" [(ngModel)]="correo">
+                <label class="form-label">Puertas</label>
+                <input type="text" class="form-control" formControlName="correo" [(ngModel)]="correo">
+                <label class="form-label">Imagen</label>
+                <input type="text" class="form-control" formControlName="correo" [(ngModel)]="correo">
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()" data-bs-dismiss="modal">Guardar Cliente</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table [data]="dataClients" [columns]="columns" (onDelete)="deleteCliente($event)"></app-table>
+</app-container>
+<app-keypad-buttom [data]="dataClients" [titulo]="titulo"></app-keypad-buttom>
